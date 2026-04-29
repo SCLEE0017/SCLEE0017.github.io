@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seulchan Lee | Postdoctoral Researcher · SKKU</title>
+  <meta name="description" content="Seulchan Lee — Postdoctoral Researcher at Earth and Remote Sensing Laboratory, Sungkyunkwan University. Research on soil moisture, SAR remote sensing, land surface modeling, and hydrological extremes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Deep Teal + Amber palette */
+      --navy: #1e4d4f;
+      --navy-deep: #0e3032;
+      --accent: #c8821e;
+      --accent-light: #dba03c;
+      --text: #1f3334;
+      --text-muted: #6b8588;
+      --bg: #f7f9f9;
+      --bg-card: #ffffff;
+      --sidebar-bg: #e7f0f0;
+      --border: #dde7e8;
+      --border-soft: #e8eff0;
+      --shadow: 0 1px 3px rgba(14, 48, 50, 0.05), 0 4px 12px rgba(14, 48, 50, 0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--navy-deep);
+      letter-spacing: -0.01em;
+    }
+
+    a {
+      color: var(--navy);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    a:hover { color: var(--accent); }
+
+    /* ---- Layout ---- */
+    .layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      min-height: 100vh;
+    }
+
+    /* ---- Sidebar ---- */
+    .sidebar {
+      background: var(--sidebar-bg);
+      padding: 3rem 2rem;
+      border-right: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar-photo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #cbd9d9, #b6c7c7);
+      margin: 0 auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border: 3px solid white;
+      box-shadow: 0 4px 16px rgba(14, 48, 50, 0.08);
+      overflow: hidden;
+    }
+    .sidebar-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+    .sidebar-name {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--navy-deep);
+      text-align: center;
+      margin-bottom: 0.3rem;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    .sidebar-role {
+      text-align: center;
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    .sidebar-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0.5rem 0 1.2rem;
+    }
+
+    .sidebar-affil {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .sidebar-affil strong {
+      color: var(--text);
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    /* Sidebar nav */
+    .sidebar-nav { margin-bottom: 1.5rem; }
+    .sidebar-nav .label {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+      font-weight: 600;
+    }
+    .sidebar-nav ul { list-style: none; }
+    .sidebar-nav li a {
+      display: block;
+      padding: 0.5rem 0.8rem;
+      color: var(--text);
+      font-size: 0.92rem;
+      font-weight: 500;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+    .sidebar-nav li a:hover {
+      background: white;
+      color: var(--navy);
+      padding-left: 1rem;
+    }
+
+    /* Sidebar links */
+    .sidebar-links { display: flex; flex-direction: column; gap: 0.45rem; }
+    .sidebar-links a {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.55rem 0.9rem;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: all 0.2s ease;
+    }
+    .sidebar-links a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .sidebar-links .icon {
+      width: 18px;
+      text-align: center;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding-top: 1.5rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ---- Main content ---- */
+    .main {
+      padding: 0;
+      background: var(--bg);
+    }
+
+    .hero-main {
+      padding: 5rem 4rem 3rem;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .hero-main .greeting {
+      font-family: 'Crimson Pro', serif;
+      font-style: italic;
+      color: var(--accent);
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero-main h1 {
+      font-size: 1.9rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.25;
+    }
+    .hero-main .lead {
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.7;
+      max-width: 680px;
+      margin-bottom: 1rem;
+    }
+    .hero-main .lead strong {
+      color: var(--navy-deep);
+      font-weight: 600;
+    }
+
+    section {
+      padding: 4rem 4rem;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    section:last-of-type { border-bottom: none; }
+
+    .section-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-size: 1.9rem;
+      margin-bottom: 2rem;
+      letter-spacing: -0.01em;
+    }
+
+    /* About */
+    .about-text {
+      font-size: 1rem;
+      line-height: 1.8;
+      max-width: 720px;
+    }
+    .about-text strong {
+      color: var(--navy-deep);
+      font-weight: 600;
+    }
+    .about-text p + p { margin-top: 1.2rem; }
+
+    /* Research interests */
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+    .interest-card {
+      padding: 1.4rem 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+    .interest-card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow);
+    }
+    .interest-card h4 {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+    .interest-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Publications */
+    .pub-subhead {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--navy-deep);
+      margin: 2rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .pub-subhead:first-child { margin-top: 0; }
+    .pub-subhead .count {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      margin-left: 0.5rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .pub-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .pub-item {
+      padding: 1.3rem 1.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      border-left: 3px solid var(--accent);
+      transition: all 0.2s ease;
+    }
+    .pub-item:hover { box-shadow: var(--shadow); }
+
+    .pub-year {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      margin-bottom: 0.3rem;
+    }
+    .pub-title {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.12rem;
+      font-weight: 600;
+      color: var(--navy-deep);
+      margin-bottom: 0.4rem;
+      line-height: 1.4;
+    }
+    .pub-authors {
+      font-size: 0.92rem;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+    }
+    .pub-authors em {
+      color: var(--accent);
+      font-style: normal;
+      font-weight: 600;
+    }
+    .pub-venue {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .pub-link {
+      display: inline-block;
+      margin-top: 0.7rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--navy);
+    }
+    .pub-link:hover { color: var(--accent); }
+
+    .pub-status {
+      display: inline-block;
+      margin-left: 0.5rem;
+      padding: 0.18rem 0.6rem;
+      background: rgba(200, 130, 30, 0.12);
+      color: var(--accent);
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .pub-footnote {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .pub-footnote a { color: var(--navy); font-weight: 500; }
+    .pub-footnote a:hover { color: var(--accent); }
+
+    /* Contact (dark banner style) */
+    .contact-banner {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-deep) 100%);
+      color: white;
+      padding: 2.5rem 2.5rem;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-banner::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(200, 130, 30, 0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .contact-card {
+      padding: 1.3rem 1.5rem;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-left: 2px solid var(--accent-light);
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+    .contact-card:hover {
+      background: rgba(255, 255, 255, 0.11);
+      border-left-color: var(--accent);
+    }
+    .contact-card .label {
+      font-size: 0.74rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-light);
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+    }
+    .contact-card .value {
+      font-size: 0.96rem;
+      color: white;
+      word-break: break-word;
+      font-weight: 500;
+      line-height: 1.55;
+    }
+    .contact-card .value a { color: white; }
+    .contact-card .value a:hover { color: var(--accent-light); }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar {
+        position: relative;
+        height: auto;
+        padding: 2.5rem 1.5rem;
+      }
+      .hero-main { padding: 3rem 2rem 2rem; }
+      section { padding: 3rem 2rem; }
+      .contact-banner { padding: 2rem 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-main h1 { font-size: 1.7rem; }
+      .section-title { font-size: 1.7rem; }
+      .sidebar-photo { width: 130px; height: 130px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="layout">
+
+  <!-- ===================== SIDEBAR ===================== -->
+  <aside class="sidebar">
+    <div class="sidebar-photo">
+      <img src="assets/profile.jpg" alt="Seulchan Lee" />
+    </div>
+    <div class="sidebar-name">Seulchan Lee</div>
+    <div class="sidebar-role">Postdoctoral Researcher</div>
+
+    <div class="sidebar-affil">
+      <strong>Earth &amp; Remote Sensing Lab</strong>
+      Sungkyunkwan University<br>Suwon, Republic of Korea
+    </div>
+    <div class="sidebar-divider"></div>
+
+    <nav class="sidebar-nav">
+      <div class="label">Navigate</div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#ongoing">Ongoing work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-links">
+      <a href="mailto:seul94@skku.edu"><span class="icon">✉</span> seul94@skku.edu</a>
+      <a href="assets/cv.pdf" target="_blank"><span class="icon">📄</span> CV (PDF)</a>
+      <a href="https://scholar.google.com/citations?user=NFKl4EgAAAAJ&hl=ko&oi=ao" target="_blank" rel="noopener"><span class="icon">🎓</span> Google Scholar</a>
+    </div>
+
+    <div class="sidebar-footer">© 2026 · ERSL, SKKU</div>
+  </aside>
+
+  <!-- ===================== MAIN ===================== -->
+  <main class="main">
+
+    <section class="hero-main" id="top">
+      <div class="greeting">— Welcome —</div>
+      <h1>Land surfaces, water, and the satellites that watch them.</h1>
+      <p class="lead">
+        I'm a postdoctoral researcher at the <strong>Earth and Remote Sensing Laboratory, Sungkyunkwan University</strong>, blending satellite remote sensing, in-situ instruments, and land surface modeling to track water through the surface — from precipitation to soil moisture to evapotranspiration.
+      </p>
+    </section>
+
+    <section id="about">
+      <div class="section-label">About</div>
+      <h2 class="section-title">Background</h2>
+      <div class="about-text">
+        <p>
+          I am a postdoctoral researcher at the <strong>Earth and Remote Sensing Laboratory (ERSL)</strong>, Sungkyunkwan University, working with <strong>Prof. Minha Choi</strong>. My research integrates satellite remote sensing, in-situ observations, and land surface modeling to study land surface–atmosphere interactions and how water moves through the land — from precipitation, to soil moisture and evapotranspiration, to floods and droughts.
+        </p>
+        <p>
+          Recent threads of my work include high-resolution soil moisture retrieval from Sentinel-1 SAR, multi-scale validation using cosmic-ray neutron probes, and characterizing precipitation forcing uncertainty in land surface models. I am broadly interested in remote sensing, hydrological extremes, and data assimilation across heterogeneous terrains.
+        </p>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="section-label">Research interests</div>
+      <h2 class="section-title">What I work on</h2>
+      <div class="interests-grid">
+        <div class="interest-card">
+          <h4>SAR Soil Moisture Retrieval</h4>
+          <p>High-resolution soil moisture from Sentinel-1, temporal stability analysis, physics-informed AI.</p>
+        </div>
+        <div class="interest-card">
+          <h4>Cosmic-Ray Neutron Probe</h4>
+          <p>Intermediate-scale soil moisture, CRNP calibration, multi-scale validation in heterogeneous terrains.</p>
+        </div>
+        <div class="interest-card">
+          <h4>Land Surface Modeling</h4>
+          <p>Noah-MP and LIS-based simulation, precipitation forcing uncertainty, root-zone soil moisture.</p>
+        </div>
+        <div class="interest-card">
+          <h4>Evapotranspiration</h4>
+          <p>Satellite/drone-based ET estimation, energy balance methods, vegetation–water coupling.</p>
+        </div>
+        <div class="interest-card">
+          <h4>Flood &amp; Drought</h4>
+          <p>Flash drought dynamics, SAR water body detection, hydrological extremes in monsoon Asia.</p>
+        </div>
+        <div class="interest-card">
+          <h4>Data Assimilation</h4>
+          <p>Combining satellite, land surface model, and in-situ data through statistical and ML approaches.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="section-label">Publications</div>
+      <h2 class="section-title">Peer-reviewed journal articles</h2>
+
+      <ul class="pub-list">
+
+        <li class="pub-item">
+          <span class="pub-year">2026</span>
+          <div class="pub-title">A novel approach for soil moisture retrieval from Sentinel-1 SAR via temporal stability-based backscatter analysis</div>
+          <div class="pub-authors"><em>S. Lee</em>, S. Cho, &amp; M. Choi</div>
+          <div class="pub-venue">Remote Sensing of Environment, 337, 115319</div>
+          <a href="https://doi.org/10.1016/j.rse.2026.115319" target="_blank" rel="noopener" class="pub-link">View paper →</a>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2025</span>
+          <div class="pub-title">Evaluating rainfall estimates derived from soil moisture using soil hydraulic properties over the Korean Peninsula</div>
+          <div class="pub-authors">D. Kim, <em>S. Lee</em>, S. Cho, D. Kim, &amp; M. Choi</div>
+          <div class="pub-venue">Journal of Hydrology, 663B, 134267</div>
+          <a href="https://doi.org/10.1016/j.jhydrol.2025.134267" target="_blank" rel="noopener" class="pub-link">View paper →</a>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2025</span>
+          <div class="pub-title">Soil moisture and evapotranspiration responses to precipitation uncertainty using Noah-MP land surface model</div>
+          <div class="pub-authors"><em>S. Lee</em>, J. Park, J. Jeong, &amp; M. Choi</div>
+          <div class="pub-venue">Stochastic Environmental Research and Risk Assessment, 2025, 1–20</div>
+          <a href="https://doi.org/10.1007/s00477-025-02991-5" target="_blank" rel="noopener" class="pub-link">View paper →</a>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2024</span>
+          <div class="pub-title">A comparative study of remotely sensed reservoir monitoring across multiple land cover types</div>
+          <div class="pub-authors">W. Kim, <em>S. Lee</em>, &amp; M. Choi</div>
+          <div class="pub-venue">Science of the Total Environment, 948, 174678</div>
+          <a href="https://doi.org/10.1016/j.scitotenv.2024.174678" target="_blank" rel="noopener" class="pub-link">View paper →</a>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2024</span>
+          <div class="pub-title">Multi-scale assessment of a cosmic-ray neutron probe observation of soil moisture for surface layer applications in a mountainous forest environment</div>
+          <div class="pub-authors">J. Jeong, <em>S. Lee</em>, S. Cho, K. Kim, &amp; M. Choi</div>
+          <div class="pub-venue">Agricultural and Forest Meteorology, 356, 110155</div>
+          <a href="https://doi.org/10.1016/j.agrformet.2024.110155" target="_blank" rel="noopener" class="pub-link">View paper →</a>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2023</span>
+          <div class="pub-title">Three-dimensional hydrological thresholds to predict shallow landslides</div>
+          <div class="pub-authors"><em>S. Lee</em>, S. Oh, R.L. Ray, Y. Lee, &amp; M. Choi</div>
+          <div class="pub-venue">Terrestrial, Atmospheric and Oceanic Sciences, 34, 20</div>
+          <a href="https://doi.org/10.1007/s44195-023-00052-4" target="_blank" rel="noopener" class="pub-link">View paper →</a>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2021</span>
+          <div class="pub-title">Correction efficiency and error characteristics for cosmic-ray soil moisture on mountainous terrain</div>
+          <div class="pub-authors">J. Jeong, <em>S. Lee</em>, &amp; M. Choi</div>
+          <div class="pub-venue">Journal of Hydrology, 601, 126657</div>
+          <a href="https://doi.org/10.1016/j.jhydrol.2021.126657" target="_blank" rel="noopener" class="pub-link">View paper →</a>
+        </li>
+
+      </ul>
+
+      <p class="pub-footnote">
+        Full publication list (24 peer-reviewed articles, including Korean journal articles) on the <a href="assets/cv.pdf" target="_blank">CV</a>.
+      </p>
+    </section>
+
+    <section id="ongoing">
+      <div class="section-label">In progress</div>
+      <h2 class="section-title">Ongoing manuscripts</h2>
+      <ul class="pub-list">
+
+        <li class="pub-item">
+          <span class="pub-year">2026</span><span class="pub-status">Major revision</span>
+          <div class="pub-title">Hydroclimatic controls on flash drought development in Northeast Asia: Roles of atmospheric demand and water availability</div>
+          <div class="pub-authors">M. Kang, <em>S. Lee (co-first)</em>, D. Kim, &amp; M. Choi</div>
+          <div class="pub-venue">Hydrological Processes — Major Revision submitted (Apr. 2026)</div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2026</span><span class="pub-status">Major revision</span>
+          <div class="pub-title">Global CMIP6-based datasets of vegetation-responsive and feedback-deflated potential evapotranspiration</div>
+          <div class="pub-authors">D. Kim, <em>S. Lee</em>, &amp; M. Choi</div>
+          <div class="pub-venue">Scientific Data — Major Revision submitted (Apr. 2026)</div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2026</span><span class="pub-status">In preparation</span>
+          <div class="pub-title">Physics-informed artificial intelligence: integrating water cloud model for multi-scale SAR soil moisture retrieval</div>
+          <div class="pub-authors">S. Cho, <em>S. Lee (co-first)</em>, D. Kim, &amp; M. Choi</div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2026</span><span class="pub-status">In preparation</span>
+          <div class="pub-title">Extraction of water bodies from SAR imagery and Swin Transformer model in diverse hydrological conditions</div>
+          <div class="pub-authors">W. Kim, S. Cho, <em>S. Lee</em>, H. Jeon, J.M. Jacobs, &amp; M. Choi</div>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2026</span><span class="pub-status">In preparation</span>
+          <div class="pub-title">CRNP as the Regional Truth: Assessing the representativeness of in-situ sensors for CRNP calibration in heterogeneous terrains</div>
+          <div class="pub-authors"><em>S. Lee</em>, D. Kim, K. Kim, &amp; M. Choi</div>
+          <div class="pub-venue">Manuscript in preparation — please reach out if you would like to read or contribute.</div>
+          <a href="https://o365skku-my.sharepoint.com/:f:/g/personal/seui1207_o365_skku_edu/IgBp6C2yFsCYSr90UC1z5cLEAR64gwhgYQLiuw_Nf3_IoPI?e=g7vNY9" target="_blank" rel="noopener" class="pub-link">Read manuscript →</a>
+        </li>
+
+        <li class="pub-item">
+          <span class="pub-year">2026</span><span class="pub-status">In preparation</span>
+          <div class="pub-title">Monitoring large scale water dynamics using CYGNSS</div>
+          <div class="pub-authors">F. Rekzi, W. Kim, <em>S. Lee</em>, &amp; M. Choi</div>
+        </li>
+
+      </ul>
+    </section>
+
+    <section id="contact">
+      <div class="section-label">Get in touch</div>
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-banner">
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="label">Email (primary)</div>
+            <div class="value"><a href="mailto:seul94@skku.edu">seul94@skku.edu</a></div>
+          </div>
+          <div class="contact-card">
+            <div class="label">Email (alt)</div>
+            <div class="value"><a href="mailto:leesc1207@gmail.com">leesc1207@gmail.com</a></div>
+          </div>
+          <div class="contact-card">
+            <div class="label">Office</div>
+            <div class="value">+82-31-290-7543</div>
+          </div>
+          <div class="contact-card">
+            <div class="label">Address</div>
+            <div class="value" style="font-size: 0.9rem;">
+              Earth and Remote Sen
