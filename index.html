@@ -417,6 +417,7 @@
       border-left: 2px solid var(--accent-light);
       border-radius: 6px;
       transition: all 0.2s ease;
+      min-width: 0; /* allow grid item to shrink so long text wraps */
     }
     .contact-card:hover {
       background: rgba(255, 255, 255, 0.11);
@@ -433,7 +434,7 @@
     .contact-card .value {
       font-size: 0.96rem;
       color: white;
-      word-break: break-word;
+      overflow-wrap: anywhere;
       font-weight: 500;
       line-height: 1.55;
     }
@@ -691,4 +692,17 @@
           <div class="contact-card">
             <div class="label">Address</div>
             <div class="value" style="font-size: 0.9rem;">
-              Earth and Remote Sen
+              Earth and Remote Sensing Lab.<br />
+              Sungkyunkwan University<br />
+              2066 Seobu-ro, Suwon 16419, Korea
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+</body>
+</html>
